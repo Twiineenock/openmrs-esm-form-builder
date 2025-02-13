@@ -61,6 +61,9 @@ const DraggableQuestion: React.FC<DraggableQuestionProps> = ({
 
   const { attributes, listeners, transform, isDragging, over, setNodeRef } = useDraggable({
     id: draggableId,
+    data: {
+      question: question
+    },
     disabled: questionCount <= 1,
   });
 

@@ -243,6 +243,12 @@ const InteractiveBuilder: React.FC<InteractiveBuilderProps> = ({
 
   const handleDragEnd = (event: DragEndEvent) => {
     const { active, over } = event;
+    //eslint-disable-next-line no-console
+    console.log(active.data.current);
+    //eslint-disable-next-line no-console
+    console.log(over.data.current);
+    //eslint-disable-next-line no-console
+    console.log(event);
 
     if (active) {
       // Get the source information
@@ -440,6 +446,7 @@ const InteractiveBuilder: React.FC<InteractiveBuilderProps> = ({
                                     <Droppable
                                       id={`droppable-question-${pageIndex}-${sectionIndex}-${questionIndex}`}
                                       key={questionIndex}
+                                      question={question}
                                     >
                                       <DraggableQuestion
                                         handleDuplicateQuestion={duplicateQuestion}
